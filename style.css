@@ -1,0 +1,173 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Tag selector: body */
+body {
+    font-family: "Inter", sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Container principal (mesclado) */
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 34px 20px;
+    text-align: center;
+}
+
+/* Container de conteúdo */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+/* ID selector: header */
+#header {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 2px solid #ccc;
+}
+
+/* Tag selector: h1 (mesclado) */
+h1 {
+    font-size: 48px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Seções com classe */
+.section {
+    width: 100%;
+    padding: 20px 100px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Títulos das seções */
+.section-title {
+    font-size: 33px;
+    margin-bottom: 12px;
+    color: #222;
+}
+
+/* Conteúdo das seções */
+.section-content {
+    font-size: 19px;
+    color: #6e6e6e;
+}
+
+/* Linha de imagens */
+.img-row {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Imagens com hover */
+.img-row img {
+    width: 190px;
+    height: 300px;
+    border-radius: 8px;
+    background: linear-gradient(0deg, #d9d9d9, #d9d9d9);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.img-row img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Linha de vídeos */
+.video-row {
+    display: flex;
+    gap: 71px;
+    justify-content: center;
+}
+
+/* Caixa de vídeo com hover */
+.video {
+    width: 500px;
+    height: 300px;
+    border-radius: 8px;
+    background: #d9d9d9;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.video:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Mapa com hover */
+.map {
+    width: 100%;
+    height: 600px;
+    border-radius: 8px;
+    background: #d9d9d9;
+    transition: box-shadow 0.3s ease;
+}
+
+.map:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Links dentro de .section-content */
+.section-content a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.section-content a:hover {
+    color: #0056b3;
+}
+
+/* Estilização da tabela */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+table,
+th,
+td {
+    border: 1px solid #aaa;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #ddd;
+}
+
+/* Estilização global dos links */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
