@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Exemplos de HTML e CSS</title>
+        <link rel="stylesheet" href="template.css" />
+    </head>
+
+    <body>
+        <header>
+            <h1>Exemplos de HTML e CSS</h1>
+            <nav>
+                <ul>
+                    <li><a href="#basico">Básico</a></li>
+                    <li><a href="#box-model">Box Model</a></li>
+                    <li><a href="#layout">Layout</a></li>
+                    <li><a href="#componentes">Componentes</a></li>
+                </ul>
+            </nav>
+            <div class="cabecalho">
+                <img src="imagens/logo1.png" alt="Imagem 1" class="logo" />
+                <h1>Título Centralizado</h1>
+                <img src="imagens/logo2.png" alt="Imagem 2" class="logo" />
+            </div>
+        </header>
+
+        <main>
+            <section id="basico">
+                <h2>Básico do HTML</h2>
+                <p>Parágrafo simples.</p>
+                <a href="#">Exemplo de link</a>
+                <ul>
+                    <li>Item de lista</li>
+                    <li>Outro item</li>
+                </ul>
+            </section>
+
+            <section id="box-model" class="box">
+                <h2>Exemplo de Box Model</h2>
+                <p>Caixa com padding, margem e borda.</p>
+            </section>
+
+            <section id="layout">
+                <h2>Exemplo de Layout com Flexbox</h2>
+                <div class="flex-container">
+                    <div class="flex-item">Item 1</div>
+                    <div class="flex-item">Item 2</div>
+                    <div class="flex-item">Item 3</div>
+                </div>
+            </section>
+
+            <section id="componentes">
+                <h2>Exemplo de Componentes</h2>
+                <button class="btn">Clique Aqui</button>
+                <form>
+                    <input type="text" placeholder="Digite algo" />
+                    <button type="submit">Enviar</button>
+                </form>
+            </section>
+
+            <table class="tabela">
+                <thead>
+                    <tr>
+                        <th>Coluna 1</th>
+                        <th>Coluna 2</th>
+                        <th>Coluna 3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Dado 1</td>
+                        <td>Dado 2</td>
+                        <td>Dado 3</td>
+                    </tr>
+                    <tr>
+                        <td>Dado 4</td>
+                        <td>Dado 5</td>
+                        <td>Dado 6</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="consulta">
+                <p>Exemplo:</p>
+                <ul>
+                    <li>exemplo 1 - <a href="https://www.">link 1</a></li>
+                    <li>exemplo 1 - <a href="https://www.">link 2</a></li>
+                </ul>
+            </div>
+
+            <hr class="linha-preta" />
+
+            <div class="split-container">
+                <div class="left-side">
+                    <div class="image-box">
+                        <img
+                            src="imagens/left-image.jpg"
+                            alt="Imagem à esquerda"
+                        />
+                    </div>
+                    <p class="info-text">
+                        Última atualização: 15 de março de 2025
+                    </p>
+                </div>
+                <div class="right-side">
+                    <div class="menu">
+                        <img src="imagens/menu.png" alt="Imagem do menu" />
+                    </div>
+                    <div class="extra-image">
+                        <img
+                            src="imagens/right-image.jpg"
+                            alt="Imagem adicional"
+                        />
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 - Todos os direitos reservados.</p>
+        </footer>
+    </body>
+</html>

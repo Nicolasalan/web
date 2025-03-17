@@ -1,0 +1,183 @@
+/* Reset básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between; /* Mantém os elementos nos cantos e o título no centro */
+    align-items: center; /* Alinha verticalmente */
+    padding: 20px 40px;
+}
+
+/* Estilizando a navegação */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: blue;
+}
+
+/* Box Model */
+.box {
+    width: 300px;
+    height: 150px;
+    margin: 20px;
+    padding: 15px;
+    border: 2px solid black;
+    background-color: lightgray;
+}
+
+/* Flexbox para Layout */
+.flex-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.flex-item {
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #555;
+}
+
+/* Botão e Formulário */
+.btn {
+    background-color: blue;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: darkblue;
+}
+
+input {
+    padding: 5px;
+    border: 1px solid #333;
+}
+
+.tabela {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabela th,
+.tabela td {
+    border: 2px solid #333; /* Bordas da tabela */
+    padding: 10px;
+    text-align: left;
+}
+
+.tabela thead {
+    background-color: #444; /* Cor do cabeçalho */
+    color: white;
+}
+
+.tabela tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Alternância de cores */
+}
+
+/* Estilos para a seção de consulta */
+.consulta {
+    background-color: lightblue; /* Cor de fundo */
+    padding: 10px; /* Espaçamento interno */
+    width: 60%; /* Largura relativa */
+    margin: 20px auto; /* Centraliza a div */
+    text-align: left; /* Alinhamento do texto */
+}
+
+.consulta p {
+    margin-bottom: 10px; /* Espaçamento inferior */
+}
+
+.consulta ul {
+    padding-left: 40px; /* Espaçamento para os itens da lista */
+}
+
+.consulta ul li {
+    display: flex; /* Usa flexbox para alinhar os itens */
+    gap: 20px; /* Espaço entre os elementos */
+    align-items: center; /* Alinha verticalmente */
+}
+
+.consulta ul li::before {
+    content: "•"; /* Adiciona um marcador antes dos itens */
+    margin-right: 10px;
+}
+
+.consulta a {
+    color: darkred; /* Cor dos links */
+    text-decoration: none; /* Remove sublinhado */
+}
+
+.consulta a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+.linha-preta {
+    border: none;
+    height: 1px;
+    background-color: #000;
+    width: 100%;
+    margin: 20px 0;
+}
+
+/* Container principal para dividir em duas colunas */
+.split-container {
+    display: flex;
+    justify-content: center; /* Centraliza as colunas */
+    align-items: flex-start;
+    gap: 20px; /* Espaço entre os itens */
+    margin: 20px;
+}
+
+/* Configuração das colunas */
+.left-side,
+.right-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilo para a imagem principal */
+.image-box img {
+    max-width: 500px;
+    height: auto;
+}
+
+/* Estilo para o menu */
+.menu img {
+    max-width: 500px;
+    height: auto;
+}
+
+/* Estilo para a imagem adicional */
+.extra-image img {
+    max-width: 700px;
+    height: auto;
+}
+
+/* Estilo para o texto de atualização */
+.info-text {
+    width: 100%;
+    text-align: left;
+    font-size: 14px;
+    margin-top: 10px;
+}
