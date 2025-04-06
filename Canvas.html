@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Desenho no Canvas</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                background-color: #b5ffcc; /* Cor de fundo da página */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+            #container {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <canvas id="meuCanvas" width="300" height="300"></canvas>
+        </div>
+
+        <script>
+            function desenhar_quadrado(ctx, x, y, largura, altura, cor) {
+                ctx.fillStyle = cor;
+                ctx.fillRect(x, y, largura, altura);
+            }
+
+            function desenhar_linha(ctx, x1, y1, x2, y2, cor, espessura) {
+                ctx.beginPath();
+                ctx.moveTo(x1, y1);
+                ctx.lineTo(x2, y2);
+                ctx.strokeStyle = cor;
+                ctx.lineWidth = espessura;
+                ctx.stroke();
+            }
+
+            function desenhar_arco(
+                ctx,
+                x,
+                y,
+                raio,
+                anguloInicial,
+                anguloFinal,
+                cor,
+            ) {
+                ctx.beginPath();
+                ctx.arc(x, y, raio, anguloInicial, anguloFinal);
+                ctx.fillStyle = cor;
+                ctx.fill();
+            }
+
+            function escrever(ctx, texto, x, y, cor) {
+                ctx.fillStyle = cor;
+                ctx.font = "16px Arial";
+                ctx.fillText(texto, x, y);
+            }
+
+            window.onload = function () {
+                const canvas = document.getElementById("meuCanvas");
+                const ctx = canvas.getContext("2d");
+
+                desenhar_quadrado(ctx, 0, 0, 300, 300, "#b5ffcc");
+
+                desenhar_quadrado(ctx, 0, 200, 300, 100, "#999999");
+
+                desenhar_quadrado(ctx, 120, 130, 60, 70, "#8B4513");
+
+                desenhar_linha(ctx, 120, 130, 150, 100, "#CD5C5C", 2);
+                desenhar_linha(ctx, 150, 100, 180, 130, "#CD5C5C", 2);
+                desenhar_linha(ctx, 120, 130, 180, 130, "#CD5C5C", 2);
+
+                desenhar_quadrado(ctx, 130, 140, 15, 15, "#87CEFA");
+                desenhar_quadrado(ctx, 155, 140, 15, 15, "#87CEFA");
+
+                desenhar_quadrado(ctx, 147, 160, 6, 40, "#654321");
+
+                desenhar_quadrado(ctx, 60, 180, 10, 20, "#654321"); // tronco
+                desenhar_arco(ctx, 65, 180, 10, 0, 2 * Math.PI, "#228B22"); // copa
+
+                desenhar_quadrado(ctx, 230, 180, 10, 20, "#654321"); // tronco
+                desenhar_arco(ctx, 235, 180, 10, 0, 2 * Math.PI, "#228B22"); // copa
+
+                desenhar_arco(ctx, 230, 70, 30, 0, 2 * Math.PI, "#FFFF00");
+            };
+        </script>
+    </body>
+</html>
