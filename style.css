@@ -5,10 +5,23 @@
 }
 
 body {
-    font-family: "Inter", sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
-    line-height: 1.6;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos específicos para página de animação */
+body.animation-page {
+    background-color: #f0f8ff;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+#animationCanvas {
+    border: 1px solid #000;
 }
 
 .container {
