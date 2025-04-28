@@ -180,3 +180,66 @@ document.addEventListener("DOMContentLoaded", () => {
   criarPainel1(ctx1);
   criarPainel2(ctx2);
 });
+
+// Código para a página de animação
+document.addEventListener('DOMContentLoaded', function() {
+  const animationCanvas = document.getElementById('animationCanvas');
+  if (!animationCanvas) return;
+
+  const ctx = animationCanvas.getContext('2d');
+  const img = new Image();
+  img.src = 'images/ponto.png';
+  
+  let imgX = animationCanvas.width / 2;
+  let imgY = animationCanvas.height / 2;
+  const imgSize = 30;
+  let targetX = imgX;
+  let targetY = imgY;
+
+  function updatePosition(e) {
+    const rect = animationCanvas.getBoundingClientRect();
+    targetX = e.clientX - rect.left;
+    targetY = e.clientY - rect.top;
+    
+    // Garantir que o ponteiro fique centralizado na imagem
+    targetX = Math.max(imgSize/2, Math.min(targetX, animationCanvas.width - imgSize/2));
+    targetY = Math.max(imgSize/2, Math.min(targetY, animationCanvas.height - imgSize/2));
+  }
+
+  function animate() {
+    // Atualizar posição suavemente
+    imgX += (targetX - imgX) * 0.1;
+    imgY += (targetY - imgY) * 0.1;
+
+    // Limpar canvas
+    ctx.clearRect(0, 0, animationCanvas.width, animationCanvas.height);
+    
+    // Desenhar imagem com o ponteiro centralizado
+    if (img.complete) {
+      ctx.drawImage(img, imgX - imgSize/2, imgY - imgSize/2, imgSize, imgSize);
+    } else {
+      // Fallback caso a imagem não tenha carregado
+      ctx.fillStyle = 'red';
+      ctx.beginPath();
+      ctx.arc(imgX, imgY, imgSize/2, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    requestAnimationFrame(animate);
+  }
+
+  animationCanvas.addEventListener('mousemove', updatePosition);
+  animationCanvas.addEventListener('mouseleave', function() {
+    // Quando o mouse sai, manter último ponto válido
+    targetX = Math.max(imgSize/2, Math.min(targetX, animationCanvas.width - imgSize/2));
+    targetY = Math.max(imgSize/2, Math.min(targetY, animationCanvas.height - imgSize/2));
+  });
+
+  img.onload = function() {
+    // Iniciar animação quando a imagem carregar
+    animate();
+  };
+
+  // Iniciar mesmo se a imagem não carregar
+  setTimeout(animate, 1000);
+});
